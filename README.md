@@ -83,7 +83,7 @@ MPM_SIM_TYPE - explicit (0) and implicit (1)
 
 TRANSFER_SCHEME  - FLIP (0), APIC (1), and MLS (2)
 
-GEOMETRY_TYPE - large dropping cube (0) and two colliding dragons (1). To test option 1, make sure to adjust the line #52 from Simulation/MPM/ModelInitSchemes.hpp accordingly.
+GEOMETRY_TYPE - large dropping cube (0) and two colliding dragons (1). 
 
 ## BibTex 
 
