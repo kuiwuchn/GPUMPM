@@ -50,6 +50,8 @@ https://github.com/kuiwuchn/3x3_SVD_CUDA
 COMPILING & RUNNING
 ===================
 
+**Under "src" directory,**
+
 For Linux, 
 1. Create folder "Build"
 2. Rename "CMakeLists-linux.txt" to "CMakeLists.txt"
