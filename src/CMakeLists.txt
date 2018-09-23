@@ -8,9 +8,6 @@ add_subdirectory(VS15CppBuild)
 include_directories(./ ${PROJECT_SOURCE_DIR}/)
 
 #	C++
-#set(CMAKE_C_COMPILER /usr/bin/gcc-6)
-#set(CMAKE_CXX_COMPILER /usr/bin/g++-6)
-SET(CMAKE_CXX_FLAGS "-W0")
 
 #	CUDA
 
@@ -55,16 +52,15 @@ cuda_add_executable(p2g_cuda
 	helper_cuda.h
 	helper_string.h
 	setting.h
-	SPGridAllocator.h
-	SPGridAllocator.cpp
-	SPGridArray.h
-	SPGridBlock.h
-	SPGridBlock.cpp
-	SPGridIterator.h
-	SPGridMask.h
-	SPGridSet.h
-	SPGridUtility.h
-	SPGridUtility.cpp	
+	SPGrid_Allocator.h
+	SPGrid_Array.h
+	SPGrid_Geometry.h
+	SPGrid_Geometry.cpp
+	SPGrid_Mask.h
+	SPGrid_Set.h
+	SPGrid_Utilities.h
+	SPGrid_Utilities.cpp	
+	std_array.h
 	
 	# MnBase
 	MnBase/Singleton.h

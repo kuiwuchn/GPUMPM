@@ -15,14 +15,12 @@ constexpr int Dim = 3;
 #define TRANSFER_SCHEME 1
 
 // 0: 7M cube 1: two dragons collide
-#define GEOMETRY_TYPE 0
+#define GEOMETRY_TYPE 1
 
 // the amount of grid being used
 #define MEMORY_SCALE 0.6//0.1
 
 #define SAVE_DATA
-
-constexpr const int maximum_particle_num = (1 << 26);
 
 template<typename T>
 struct TEST_STRUCT {

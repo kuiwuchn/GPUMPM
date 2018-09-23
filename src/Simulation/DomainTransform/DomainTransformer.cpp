@@ -2,7 +2,7 @@
 #include <Setting.h>
 #include <MnBase/Meta/AllocMeta.h>
 #include <MnBase/AggregatedAttribs.h>
-#include <SPGrid.h>
+#include <SPGrid_Allocator.h>
 
 namespace mn {
 
@@ -30,8 +30,10 @@ namespace mn {
 
 		uint64_t h_neighborOffsets[8];
 		using namespace SPGrid;
-        using T_STRUCT = TEST_STRUCT<T>;
-        using T_MASK = typename SparseGrid<T_STRUCT, Dim>::Array<T>::Mask;
+		using T_STRUCT = TEST_STRUCT<T>;
+		using SPG_Allocator = SPGrid_Allocator<T_STRUCT, Dim>;
+		using T_MASK = typename SPG_Allocator::Array<T>::mask;
+
 		for (int i = 0; i < 2; ++i)
 			for (int j = 0; j < 2; ++j)
 				for (int k = 0; k < 2; ++k)

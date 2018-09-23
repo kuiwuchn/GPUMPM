@@ -1,7 +1,7 @@
 #include "SimulatorBuilder.h"
 #include "ModelInitSchemes.hpp"
 #include <System/Log/Logger.hpp>
-#include <SPGrid.h>
+#include <SPGrid_Allocator.h>
 
 namespace mn {
 
@@ -30,12 +30,13 @@ namespace mn {
         simulator.h_masks.resize(Dim);
         // hardcode mask
         using namespace SPGrid;
-        using T_STRUCT = TEST_STRUCT<T>;
-        using T_MASK = typename SparseGrid<T_STRUCT, Dim>::Array<T>::Mask;
+		using T_STRUCT = TEST_STRUCT<T>;
+		using SPG_Allocator = SPGrid_Allocator<T_STRUCT, Dim>;
+		using T_MASK = typename SPG_Allocator::Array<T>::mask;
 
-        simulator.h_masks[0] = T_MASK::XMask;
-        simulator.h_masks[1] = T_MASK::YMask;
-        simulator.h_masks[2] = T_MASK::ZMask;
+		simulator.h_masks[0] = T_MASK::xmask;
+		simulator.h_masks[1] = T_MASK::ymask;
+		simulator.h_masks[2] = T_MASK::zmask;
 
         // configuration
         T totalMass, volume, pMass;

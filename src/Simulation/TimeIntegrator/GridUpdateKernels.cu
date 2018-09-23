@@ -134,7 +134,7 @@ namespace mn {
 		if (data>local_max_squared)
 			local_max_squared = data;
         
-		for (uint offset = 1; offset & 0x1f; offset <<= 1) {
+		for (uint32_t offset = 1; offset & 0x1f; offset <<= 1) {
             T tmp = __shfl_down(local_max_squared, offset);
             if (tmp > local_max_squared)
                 local_max_squared = tmp;
