@@ -11,9 +11,9 @@ namespace mn {
     __global__ void soaToAos(const int numParticle, T** _SoA, T* _AoS);
 
     __global__ void registerPage(const int numParticle, const int tableSize, 
-        const uint64_t* d_particleOffsets, unsigned long long* d_keyTable, int* d_valTable, int* d_numBucket);
+        const uint64_t* d_particleOffsets, uint64_t* d_keyTable, int* d_valTable, int* d_numBucket);
     __global__ void findPage(const int numParticle, const int tableSize, 
-        const uint64_t* d_particleOffsets, unsigned long long* d_keyTable, int* d_valTable, int* d_particle2bucket, int* d_bucketSizes);
+        const uint64_t* d_particleOffsets, uint64_t* d_keyTable, int* d_valTable, int* d_particle2bucket, int* d_bucketSizes);
     __global__ void reorderKey(const int numParticle, const int* d_pageIds, const int* d_offsets, int* d_sizes,
         const uint64_t* d_keys, uint64_t* d_orderedKeys, int* d_orderedIndices);
 

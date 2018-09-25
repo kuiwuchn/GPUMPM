@@ -51,6 +51,47 @@ elseif(${_host_name} STREQUAL "turing")
 
     include_directories(/nobackup/mingg13/partio/build/Linux-4.4.0-x86_64-optimize/include)
     link_directories(/nobackup/mingg13/partio/build/Linux-4.4.0-x86_64-optimize/lib)
+elseif(${_host_name} STREQUAL "kratos")
+
+	find_package(CUDA)
+    find_package(CUDA REQUIRED)
+    include_directories(/usr/include/thrust/system/cuda/)
+    link_directories(/usr/lib/cuda)
+    include_directories(/usr/local/cuda-9.2/samples/common/inc)
+    set(CUDA_SEPARABLE_COMPILATION ON)
+
+    set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-gencode arch=compute_61,code=sm_61)
+    message("arch=61")
+
+    include_directories(/home/fanfu/partio/build/Linux-4.15.0-x86_64-optimize/include)
+    link_directories(   /home/fanfu/partio/build/Linux-4.15.0-x86_64-optimize/lib)
+elseif(${_host_name} STREQUAL "metalgear")
+
+	find_package(CUDA)
+    find_package(CUDA REQUIRED)
+    include_directories(/usr/local/cuda-9.0/include)
+    include_directories(/usr/local/cuda-9.0/samples/common/inc)
+    link_directories(/usr/local/cuda-9.0/lib64)
+    set(CUDA_SEPARABLE_COMPILATION ON)
+
+    set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-gencode arch=compute_61,code=sm_61)
+    message("arch=61")
+
+    include_directories(/home/fanfu/partio/partio/build/Linux-4.13.0-x86_64-optimize/include)
+    link_directories(   /home/fanfu/partio/partio/build/Linux-4.13.0-x86_64-optimize/lib)
+elseif(${_host_name} STREQUAL "mine-ubuntu1804")
+
+    find_package(CUDA REQUIRED)
+    include_directories(/usr/local/cuda-9.2/include)
+    include_directories(/usr/local/cuda-9.2/samples/common/inc)
+    link_directories(/usr/local/cuda-9.2/lib64)
+    set(CUDA_SEPARABLE_COMPILATION ON)
+
+    set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-gencode arch=compute_61,code=sm_61)
+    message("arch=61")
+    
+    include_directories(/home/mine/SDKs/partio/include)
+    link_directories(/home/mine/SDKs/partio/lib)
 elseif(${_host_name} STREQUAL "mine-Surface-Book-2")
 
     find_package(CUDA REQUIRED)

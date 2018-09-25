@@ -39,7 +39,7 @@ namespace mn {
         
         /// histogram sort (substitution of radix sort)
         checkCudaErrors(cudaMemset(d_numBucket, 0, sizeof(int)));
-        checkCudaErrors(cudaMemset(d_keyTable, 0xff, sizeof(unsigned long long) * _tableSize));
+        checkCudaErrors(cudaMemset(d_keyTable, 0xff, sizeof(uint64_t) * _tableSize));
         // to write for sorting optimization
         configuredLaunch({"RegisterPage", _numParticle}, registerPage,
             _numParticle, _tableSize,  (const uint64_t*)d_offsets, d_keyTable, d_valTable, d_numBucket);

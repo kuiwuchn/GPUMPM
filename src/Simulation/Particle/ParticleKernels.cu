@@ -21,7 +21,7 @@ namespace mn {
     }
 
     __global__ void registerPage(const int numParticle, const int tableSize, 
-        const uint64_t* d_particleOffsets, unsigned long long* d_keyTable, int* d_valTable, int* d_numBucket) {
+        const uint64_t* d_particleOffsets, uint64_t* d_keyTable, int* d_valTable, int* d_numBucket) {
         int idx = blockDim.x * blockIdx.x + threadIdx.x;
         if (idx >= numParticle) return;
         unsigned long long key = d_particleOffsets[idx] >> 12;
@@ -30,7 +30,7 @@ namespace mn {
       
         while ((ori = d_keyTable[hashkey]) != key) {
             if (ori == 0xffffffffffffffff)
-                ori = atomicCAS(d_keyTable + hashkey, 0xffffffffffffffff, key);    ///< -1 is the default value, means unoccupied
+                ori = atomicCAS((unsigned long long*)d_keyTable + hashkey, 0xffffffffffffffff, key);    ///< -1 is the default value, means unoccupied
             if (d_keyTable[hashkey] == key) {  ///< haven't found related record, so create a new entry
                 if (ori == 0xffffffffffffffff)
                     d_valTable[hashkey] = atomicAdd(d_numBucket, 1);   ///< created a record
@@ -42,7 +42,7 @@ namespace mn {
     }
 
     __global__ void findPage(const int numParticle, const int tableSize, 
-        const uint64_t* d_particleOffsets, unsigned long long* d_keyTable, int* d_valTable, int* d_particle2bucket, int* d_bucketSizes) {
+        const uint64_t* d_particleOffsets, uint64_t* d_keyTable, int* d_valTable, int* d_particle2bucket, int* d_bucketSizes) {
         int idx = blockDim.x * blockIdx.x + threadIdx.x;
         if (idx >= numParticle) return;
         unsigned long long key = d_particleOffsets[idx] >> 12;

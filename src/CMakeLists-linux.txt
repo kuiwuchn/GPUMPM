@@ -76,6 +76,17 @@ elseif(${_host_name} STREQUAL "kratos")
 
     include_directories(/home/fanfu/partio/build/Linux-4.15.0-x86_64-optimize/include)
     link_directories(   /home/fanfu/partio/build/Linux-4.15.0-x86_64-optimize/lib)
+elseif(${_host_name} STREQUAL "mine-ubuntu1804")
+    set(CMAKE_C_COMPILER /usr/bin/gcc-6)
+    set(CMAKE_CXX_COMPILER /usr/bin/g++-6)
+    SET(CMAKE_CXX_FLAGS "-std=c++14 -O3")
+
+    include_directories(/usr/local/cuda-9.2/include)
+    include_directories(/usr/local/cuda-9.2/samples/common/inc)
+    link_directories(/usr/local/cuda-9.2/lib64)
+
+    include_directories(/home/mine/SDKs/partio/include)
+    link_directories(/home/mine/SDKs/partio/lib)
 elseif(${_host_name} STREQUAL "mine-Surface-Book-2")
     set(CMAKE_C_COMPILER /usr/bin/gcc-7)
     set(CMAKE_CXX_COMPILER /usr/bin/g++-7)
