@@ -13,7 +13,7 @@ cmake_host_system_information(RESULT _host_name QUERY HOSTNAME)
 message("-- _host_name variable is set to: " ${_host_name})
 if(${_host_name} STREQUAL "mine-win10")
 
-set(CMAKE_CXX_FLAGS "/std:c++11 /EHsc")
+set(CMAKE_CXX_FLAGS "/std:c++14 /EHsc")
 include_directories(
 	"C:/SDKs/cuda/v9.2/Toolkit/include"
 	"C:/SDKs/cuda/v9.2/Samples/common/inc")
@@ -26,7 +26,7 @@ else()
 
 set(CMAKE_C_COMPILER /usr/bin/gcc-7)
 set(CMAKE_CXX_COMPILER /usr/bin/g++-7)
-set(CMAKE_CXX_FLAGS "-std=c++11 -O3 -c")
+set(CMAKE_CXX_FLAGS "-std=c++14 -O3 -c")
 
 include_directories(D:/Libs/CUDAToolkit/v8.0/include)
 link_directories(D:/Libs/CUDAToolkit/v8.0/lib/x64)
