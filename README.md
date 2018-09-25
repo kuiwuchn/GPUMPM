@@ -39,6 +39,8 @@ We compute SVD "on-the-fly" and use modified histogram sort for particle sorting
 
 More configuration options are in **CONFIGURATION** section.
 
+**Note: this software is released under the GPLv3.0 license. For commercial use, please email authors for negotiation.**
+
 Requirements
 ============
 
