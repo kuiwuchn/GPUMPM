@@ -36,7 +36,7 @@ protected:
 #else
     // WARNING - using this scheme will break all upsampling and downsampling!!
     // If blocked scheme we need to know the size of the total grid
-    enum { // Bit masks for the upper 52 bits of memory addresses (page indices)
+    enum : uint64_t { // Bit masks for the upper 52 bits of memory addresses (page indices)
         page_zbits=NextLogTwo<BLOCKED_GRID_SIZE>::value - block_zbits,
         page_ybits=NextLogTwo<BLOCKED_GRID_SIZE>::value - block_ybits,
         page_xbits=NextLogTwo<BLOCKED_GRID_SIZE>::value - block_xbits,
