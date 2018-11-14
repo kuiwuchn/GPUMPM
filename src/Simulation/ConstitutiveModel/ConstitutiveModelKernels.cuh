@@ -83,7 +83,7 @@ namespace mn {
         dP_hat_dSigma_upper[3]=scaled_lambda/(S[0]*S[1]); dP_hat_dSigma_upper[4]=scaled_lambda/(S[0]*S[2]); dP_hat_dSigma_upper[5]=scaled_lambda/(S[1]*S[2]);
 
         scaled_lambda=-lambda*(J-1.f)*J;
-        T M[3]; M[0]=0.5f*(2.f*mu+scaled_lambda/(S[0]*S[1])); M[1]=0.5f*(2.f*mu+scaled_lambda/(S[0]*S[2])); M[2]=0.5f*(2.f*mu+scaled_lambda/(S[2]*S[2]));
+        T M[3]; M[0]=0.5f*(2.f*mu+scaled_lambda/(S[0]*S[1])); M[1]=0.5f*(2.f*mu+scaled_lambda/(S[0]*S[2])); M[2]=0.5f*(2.f*mu+scaled_lambda/(S[1]*S[2]));
         //
 
         T P[3]; 
