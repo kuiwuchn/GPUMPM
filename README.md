@@ -1,6 +1,6 @@
 # GPU Optimization of Material Point Methods 
 
-[Ming Gao](http://pages.cs.wisc.edu/~mingg13/)\*, 
+[Ming Gao](https://www.seas.upenn.edu/~minggao/)\*, 
 [Xinlei Wang](https://github.com/littlemine)\*, 
 [Kui Wu](http://www.cs.utah.edu/~kwu/)\* (\*joint first authors), 
 Andre Pradhana, 
