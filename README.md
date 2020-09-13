@@ -2,7 +2,7 @@
 
 [Ming Gao](https://mingg13.github.io/)\*, 
 [Xinlei Wang](https://github.com/littlemine)\*, 
-[Kui Wu](http://www.cs.utah.edu/~kwu/)\* (\*joint first authors), 
+[Kui Wu](http://people.csail.mit.edu/kuiwu/)\* (\*joint first authors), 
 Andre Pradhana, 
 [Eftychios Sifakis](http://pages.cs.wisc.edu/~sifakis/), 
 [Cem Yuksel](http://www.cemyuksel.com/), 
